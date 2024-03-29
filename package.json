@@ -1,5 +1,5 @@
 {
-  "name": "fiber",
+  "name": "fiber-screen-kit",
   "private": false,
   "license": "MIT",
   "version": "0.0.0",
@@ -9,6 +9,14 @@
   "files": [
     "dist"
   ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Forgere/fiber-screen-kit"
+  },
+  "author": {
+    "name": "Forgere",
+    "url": "https://github.com/Forgere"
+  },
   "scripts": {
     "dev": "vite",
     "build": "tsc --p ./tsconfig-build.json && vite build",
