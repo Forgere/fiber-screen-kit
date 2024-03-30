@@ -1,1 +1,3 @@
-export type PropsWithOptionalChildren<P = unknown> = P & { children?: ReactNode };
+import React from 'react';
+
+export type PropsWithOptionalChildren<P = unknown> = P & { children?: React.ReactNode };

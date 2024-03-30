@@ -1,5 +1,4 @@
-import { useRef, useState, useContext} from 'react'
-import { Select } from "@react-three/postprocessing"
+import { useRef, useState } from 'react'
 import {useFrame} from '@react-three/fiber'
 import { Mesh } from 'three'
 

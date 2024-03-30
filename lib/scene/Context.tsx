@@ -1,15 +1,15 @@
-import { createContext, useState, ReactNode, useContext } from 'react'
+import { createContext, useState, useContext } from 'react'
 import {PropsWithOptionalChildren} from '../utils'
 
 export const SceneContext = createContext({
-  select: null,
-  setSelect: () => {
-    
-  }
+  select: '',
+  setSelect: ((value: string) => {
+    console.log(value)
+  }) as React.Dispatch<React.SetStateAction<string>>
 })
 
 export const ContextProvider = ({ children }: PropsWithOptionalChildren) => {
-  const [select, setSelect] = useState(null)
+  const [select, setSelect] = useState<string>('')
   
   return (
     <SceneContext.Provider
@@ -24,6 +24,7 @@ export const ContextProvider = ({ children }: PropsWithOptionalChildren) => {
 }
 
 
+/* eslint-disable-next-line react-refresh/only-export-components */
 export const useSceneSelect = () => {
   const context = useContext(SceneContext)
   
