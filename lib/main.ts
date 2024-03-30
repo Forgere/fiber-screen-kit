@@ -1,4 +1,4 @@
-export {Scene} from "./Scene";
+export {Scene} from "./scene";
 
 export {Box} from "./box"
 

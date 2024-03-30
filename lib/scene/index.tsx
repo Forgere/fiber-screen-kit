@@ -6,7 +6,7 @@ import {
   type EnvironmentProps
  } from '@react-three/drei'
  import { Selection } from "@react-three/postprocessing"
- import { Effects } from './effect'
+ import { Effects } from '../core'
  import { ContextProvider } from './Context'
 
 
@@ -30,12 +30,10 @@ export const Scene = (props: TScene = {}) => {
   } = props
   
   const [dpr, setDpr] = useState(2)
-  const [select, setSelect] = useState(null)
 
   return (
     <Suspense fallback={"loading"}>
       <ContextProvider>
-
         <Canvas shadows={shadow} dpr={dpr}>
           { shadow && <BakeShadows />}
           { sky && <Sky />}
@@ -51,7 +49,7 @@ export const Scene = (props: TScene = {}) => {
              {children}
             </Selection>
           </Bvh>
-        </Canvas>   
+        </Canvas> 
       </ContextProvider>
     </Suspense>
   )

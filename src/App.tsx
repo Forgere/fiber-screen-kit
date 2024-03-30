@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import './App.css'
 
-import { Scene, Box } from '../lib/main';
+import { Scene, Box, Model } from '../lib/main';
 
 function App() {
   const [count, setCount] = useState(0)
@@ -14,8 +14,10 @@ function App() {
           count is {count}
         </button>
         <Scene>
-          <Box position={[1, 1, 1]} />
+          <Box position={[1 + count, 1, 1]} />
           <Box position={[-1, -1, -1]} />
+          
+          <Model scale={[0.01, 0.01, 0.01]}/>
         </Scene>
       </div>
     </>

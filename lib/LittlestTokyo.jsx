@@ -11,6 +11,8 @@ Title: Littlest Tokyo
 import React, { useRef, useEffect } from 'react'
 import { useGLTF, useAnimations } from '@react-three/drei'
 
+import {Dynamic} from './core'
+
 export function Model(props) {
   const group = useRef()
   const { nodes, materials, animations } = useGLTF('/LittlestTokyo-transformed.glb')
@@ -18,12 +20,12 @@ export function Model(props) {
   
    useEffect(() => {
     actions['Take 001'].play()
-  }, [])
+  }, [actions])
   
   return (
     <group ref={group} {...props} dispose={null}>
       <group name="OSG_Scene">
-        <group>
+        <Dynamic>
           <group name="Object078" position={[76.075, 163.937, 118.597]} rotation={[-Math.PI / 3, 0, 0]} scale={3.099}>
             <group position={[-97.409, -7.128, -96.27]}>
               <mesh name="Object078_Plastic_Soft_0" geometry={nodes.Object078_Plastic_Soft_0.geometry} material={materials.Plastic_Soft} />
@@ -59,12 +61,15 @@ export function Model(props) {
               <mesh name="body_normal_0" geometry={nodes.body_normal_0.geometry} material={materials.normal} />
             </group>
           </group>
-          <group name="Object608" position={[-54.38, 114.483, -87.573]} rotation={[-Math.PI / 2, 0, 0]} scale={3.099}>
-            <group position={[-55.32, -73.646, -80.314]}>
-              <mesh name="Object608_metalmat_0" geometry={nodes.Object608_metalmat_0.geometry} material={materials.metalmat} />
-              <mesh name="Object608_paintmat_0" geometry={nodes.Object608_paintmat_0.geometry} material={materials.paintmat} />
+          <Dynamic>
+            <group name="Object608" position={[-54.38, 114.483, -87.573]} rotation={[-Math.PI / 2, 0, 0]} scale={3.099}>
+              <group position={[-55.32, -73.646, -80.314]}>
+                <mesh name="Object608_metalmat_0" geometry={nodes.Object608_metalmat_0.geometry} material={materials.metalmat} />
+                <mesh name="Object608_paintmat_0" geometry={nodes.Object608_paintmat_0.geometry} material={materials.paintmat} />
+              </group>
             </group>
-          </group>
+          </Dynamic>
+
           <group name="wire7" position={[53.443, -91.07, 179.833]} rotation={[-1.534, 0, 0]}>
             <group position={[-138.488, 205.266, 96.473]}>
               <mesh name="wire7_normal_0" geometry={nodes.wire7_normal_0.geometry} material={materials.normal} />
@@ -81,12 +86,14 @@ export function Model(props) {
                 <mesh name="Object681_metalmat_0" geometry={nodes.Object681_metalmat_0.geometry} material={materials.metalmat} />
               </group>
             </group>
-            <group position={[0, 0, 76.43]}>
+             <Dynamic>
+                         <group position={[0, 0, 76.43]}>
               <mesh name="Object675_metalmat_0" geometry={nodes.Object675_metalmat_0.geometry} material={materials.metalmat} />
               <mesh name="Object675_paintmat_0" geometry={nodes.Object675_paintmat_0.geometry} material={materials.paintmat} />
               <mesh name="Object675_glassmat_0" geometry={nodes.Object675_glassmat_0.geometry} material={materials.glassmat} />
               <mesh name="Object675_outline_0" geometry={nodes.Object675_outline_0.geometry} material={materials.outline} />
             </group>
+             </Dynamic>
           </group>
           <group name="Object532" position={[-29.258, -38.731, -7.815]} rotation={[-Math.PI / 2, 0, -0.698]} scale={3.099}>
             <group position={[-17.707, -77.448, -30.882]} rotation={[0, 0, 0.698]}>
@@ -224,7 +231,7 @@ export function Model(props) {
               <mesh name="Object709_Material_#5518_0" geometry={nodes['Object709_Material_#5518_0'].geometry} material={materials.Material_5518} />
             </group>
           </group>
-        </group>
+        </Dynamic>
         <primitive object={nodes._rootJoint} />
         <mesh name="Object649_normal_0" geometry={nodes.Object649_normal_0.geometry} material={materials.normal} position={[-85.046, 5.403, -25.433]} rotation={[-Math.PI / 2, 0, 0]} />
         <mesh name="Object649_paintmat_0" geometry={nodes.Object649_paintmat_0.geometry} material={materials.paintmat} position={[-85.046, 5.403, -25.433]} rotation={[-Math.PI / 2, 0, 0]} />
