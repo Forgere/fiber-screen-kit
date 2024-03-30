@@ -1,6 +1,6 @@
 import { Canvas } from '@react-three/fiber'
 import { 
-  PerformanceMonitor, Environment, OrbitControls, Bvh,
+  PerformanceMonitor, Environment, OrbitControls, Bvh, BakeShadows,
   type OrbitControlsProps,
   type EnvironmentProps
  } from '@react-three/drei'
@@ -8,13 +8,15 @@ import { useState, Suspense } from 'react'
 
 
 type TScene = {
+  shadow?: Boolean;
   envOptions?: EnvironmentProps
   controlOptions?: OrbitControlsProps
   children?: React.ReactNode | React.ReactNode[]
 }
 
 export const Scene = (props: TScene = {}) => {
-  const { 
+  const {
+    shadow = true,
     controlOptions = {},
     envOptions = {
       preset: 'city'
@@ -24,9 +26,10 @@ export const Scene = (props: TScene = {}) => {
   const [dpr, setDpr] = useState(2)
 
   return (
-    <Suspense fallback={"loading"}>
+    <Suspense shadows={shadow} fallback={"loading"}>
       {dpr}
         <Canvas dpr={dpr}>
+          { shadow && <BakeShadows />}
           <PerformanceMonitor factor={1} onChange={({ factor }) => setDpr(Math.floor(0.5 + 1.5 * factor))} />
           <Environment {...envOptions} />
           <OrbitControls {...controlOptions} />
