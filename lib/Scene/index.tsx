@@ -4,40 +4,13 @@ import {
   type OrbitControlsProps,
   type EnvironmentProps
  } from '@react-three/drei'
-import { useRef, useState, Suspense } from 'react'
-import { Mesh } from 'three'
+import { useState, Suspense } from 'react'
 
-type props = {
-  position: [number, number, number]
-}
-
-function Box(props: props) {
-  // This reference will give us direct access to the mesh
-  const meshRef = useRef<Mesh>(null)
-  // Set up state for the hovered and active state
-  const [hovered, setHover] = useState(false)
-  const [active, setActive] = useState(false)
-  // Subscribe this component to the render-loop, rotate the mesh every frame
-  // useFrame((_, delta) => (meshRef.current?.rotation?.x += delta))
-  // Return view, these are regular three.js elements expressed in JSX
-  return (
-    <mesh
-      {...props}
-      ref={meshRef}
-      scale={active ? 1.5 : 1}
-      onClick={() => setActive(!active)}
-      onPointerOver={() => setHover(true)}
-      onPointerOut={() => setHover(false)}
-    >
-      <boxGeometry args={[1, 1, 1]} />
-      <meshStandardMaterial color={hovered ? 'hotpink' : 'orange'} />
-    </mesh>
-  )
-}
 
 type TScene = {
   envOptions?: EnvironmentProps
   controlOptions?: OrbitControlsProps
+  children?: React.ReactNode | React.ReactNode[]
 }
 
 export const Scene = (props: TScene = {}) => {
@@ -45,7 +18,8 @@ export const Scene = (props: TScene = {}) => {
     controlOptions = {},
     envOptions = {
       preset: 'city'
-    }
+    },
+    children = null
   } = props  
   const [dpr, setDpr] = useState(2)
 
@@ -60,8 +34,7 @@ export const Scene = (props: TScene = {}) => {
             <spotLight position={[10, 10, 10]} angle={0.15} penumbra={1} decay={0} intensity={Math.PI} />
             <pointLight position={[-10, -10, -10]} decay={0} intensity={Math.PI} />
             <Bvh firstHitOnly>
-             <Box position={[-1.2, 0, 0]} />
-             <Box position={[1.2, 0, 0]} />
+              {children}
             </Bvh>
         </Canvas>   
     </Suspense>
