@@ -20,7 +20,7 @@ type TScene = {
 
 export const Scene = (props: TScene = {}) => {
   const {
-    shadow = true,
+    shadow = false,
     sky = false,
     controlOptions = {},
     envOptions = {
@@ -29,7 +29,7 @@ export const Scene = (props: TScene = {}) => {
     children = null
   } = props
   
-  const [dpr, setDpr] = useState(2)
+  const [dpr, setDpr] = useState(1)
 
   return (
     <Suspense fallback={"loading"}>
@@ -37,7 +37,7 @@ export const Scene = (props: TScene = {}) => {
         <Canvas shadows={shadow} dpr={dpr}>
           { shadow && <BakeShadows />}
           { sky && <Sky />}
-          <PerformanceMonitor factor={1} onChange={({ factor }) => setDpr(Math.floor(0.5 + 1.5 * factor))} />
+          <PerformanceMonitor factor={3} onChange={({ factor }) => setDpr(Math.floor(0.5 + 0.5 * factor))} />
           <Environment {...envOptions} />
           <OrbitControls {...controlOptions} />
           <ambientLight intensity={1} />

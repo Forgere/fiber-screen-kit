@@ -19,7 +19,7 @@ function App() {
         height: 600,
         border: '1px solid #ccc'
       }}>
-        <Scene>
+        <Scene shadow={false}>
           <Box position={[1 + count, 1, 1]} />
           <Box position={[-1, -1, -1]} />
           
