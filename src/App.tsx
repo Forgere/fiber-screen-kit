@@ -16,13 +16,14 @@ function App() {
       </div>
       <div style={{
         width: 800,
-        height: 600
+        height: 600,
+        border: '1px solid #ccc'
       }}>
         <Scene>
           <Box position={[1 + count, 1, 1]} />
           <Box position={[-1, -1, -1]} />
           
-          <Model scale={[0.01, 0.01, 0.01]}/>
+          <Model scale={[0.01, 0.01, 0.01]} url="/LittlestTokyo-transformed.glb"/>
         </Scene>
       </div>
     </>
