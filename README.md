@@ -8,5 +8,5 @@ vite react threejs fiber
     https://github.com/pmndrs/gltfjsx
 
   ```
-    npx gltfjsx public/LittlestTokyo.glb
+    npx gltfjsx public/LittlestTokyo.glb --transform
   ``` 
