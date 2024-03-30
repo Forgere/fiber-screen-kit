@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import './App.css'
 
-import { Scene } from '../';
+import { Scene } from '../lib/main';
 
 function App() {
   const [count, setCount] = useState(0)
