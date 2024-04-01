@@ -20,10 +20,57 @@ function App() {
         border: '1px solid #ccc'
       }}>
         <Scene shadow={false}>
-          <Box position={[1 + count, 1, 1]} />
-          <Box position={[-1, -1, -1]} />
+          <Box 
+            position={[1, 1, 1]} 
+            animations={[
+              {
+                property: "position",
+                from: [1, 1, 1],
+                to: [2, 2, 2],
+                duration: 2,
+                start: 1,
+                delay: 0,
+              },
+              {
+                property: "rotation",
+                from: [0, 0, 0],
+                to: [0, 0, Math.PI],
+                duration: 1,
+                start: 0,
+              },
+              {
+                property: "position",
+                from: [2, 2, 2],
+                to: [1, 0, Math.PI],
+                duration: 1,
+                start: 0,
+              },
+            ]} 
+          />
+          <Box 
+            position={[-1, -1, -1]} 
+            animations={[
+              {
+                property: "position",
+                from: [-1, -1, -1],
+                to: [2, 2, 2],
+                duration: 2,
+                start: 1,
+                delay: 0,
+                onComplete: () => {
+                  return 'postion to -1-1-1'
+                }
+              },
+              {
+                property: "position",
+                from: [2, 2, 2],
+                to: [-1, -1, -1],
+                duration: 1,
+              }
+            ]} 
+          />
           
-          <Model scale={[0.01, 0.01, 0.01]} url="/LittlestTokyo-transformed.glb"/>
+          {/* <Model scale={[0.01, 0.01, 0.01]} url="/LittlestTokyo-transformed.glb"/> */}
         </Scene>
       </div>
     </>

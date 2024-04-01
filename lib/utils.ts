@@ -1,3 +1,17 @@
 import React from 'react';
+import gsap from 'gsap';
+import { Vector3 } from 'three';
 
 export type PropsWithOptionalChildren<P = unknown> = P & { children?: React.ReactNode };
+
+export type TAnimate = {
+  property: 'position' | 'rotation' | 'scale'
+  from: Vector3
+  to: Vector3
+  start: number
+  duration: number,
+  ease: gsap.EaseFunction,
+  delay: number,
+  onComplete: () => void,
+  onReverseComplete: () => void,
+}

@@ -13,6 +13,7 @@ export function Dynamic(props: TDynamic) {
   const meshRef = useRef<Group<Object3DEventMap>>(null)
 
   const { select, setSelect} = useContext(SceneContext)
+
   
   useEffect(() => {
     if ( meshRef.current ) {

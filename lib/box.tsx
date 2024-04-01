@@ -1,30 +1,81 @@
-import { useRef, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import {useFrame} from '@react-three/fiber'
-import { Mesh } from 'three'
+import { Mesh, Vector3 } from 'three'
+import gsap from 'gsap'
+import {omit} from 'lodash'
 
 import {Dynamic} from './core'
+import { useClock } from './scene/Context'
+import { TAnimate } from './utils'
 
 type props = {
   position: [number, number, number]
+  animations?: TAnimate[]
 }
 
 export function Box(props: props) {
-  // This reference will give us direct access to the mesh
+  const { animations = [] } = props
   const meshRef = useRef<Mesh>(null)
-  // Set up state for the hovered and active state
   const [hovered, setHover] = useState(false)
   const [active, setActive] = useState(false)
-  
-  useFrame((_, delta) => {
-    if (meshRef.current) {
-      meshRef.current.rotation.x += delta
+
+  const tl = gsap.timeline({ repeat: 0, repeatDelay: 0, progress: 0, paused: true });
+  const clock = useClock()
+
+  // useFrame(() => {
+  //   const time = clock?.getElapsedTime() || 0
+  //   const start = animations[0]?.start || 0
+  //   const total = animations.reduce((acc, animation) => {
+  //     acc += animation.duration
+  //     acc += animation.delay || 0
+  //     return acc
+  //   }, 0) + 1
+
+  //   if ((time - start) > 0 && time <= (start + total)  ) {
+  //     const progress = Number(((time - start) / total))
+  //     tl.progress(progress)
+  //   }
+  // })
+
+  useEffect(() => {
+    if (!meshRef.current) return
+
+    animations.forEach((animation) => {
+
+      const originVector = new Vector3(...animation.from)
+      const toVector = new Vector3(...animation.to)
+      const duration = animation.duration
+      const ease = animation.ease || 'power1.inOut'
+
+      if (meshRef.current && meshRef.current[animation.property]) {
+        tl.fromTo(meshRef.current[animation.property], originVector, {
+          ...toVector,
+          duration: duration,
+          ease: ease,
+          delay: animation.delay || 0,
+          immediateRender: false,
+          onComplete: () => {
+            if (animation.onComplete) {
+              const res = animation.onComplete()
+              console.log(res)
+            }
+          }
+        }, animation.start)
+      }
+
+    })
+
+    tl.play()
+
+    return () => {
+      tl.kill()
     }
-  })
+  }, [])
 
   return (
     <Dynamic>
       <mesh
-        {...props}
+        {...omit(props, 'animations')}
         ref={meshRef}
         scale={active ? 1.5 : 1}
         onClick={() => {

@@ -1,7 +1,16 @@
-import { createContext, useState, useContext } from 'react'
+import { createContext, useState, useContext, useEffect } from 'react'
 import {PropsWithOptionalChildren} from '../utils'
+import * as THREE from 'three'
 
-export const SceneContext = createContext({
+
+export const SceneContext = createContext<
+  {
+    clock: THREE.Clock | null,
+    select: string
+    setSelect: React.Dispatch<React.SetStateAction<string>>
+  }
+>({
+  clock: null,
   select: '',
   setSelect: ((value: string) => {
     console.log(value)
@@ -10,12 +19,14 @@ export const SceneContext = createContext({
 
 export const ContextProvider = ({ children }: PropsWithOptionalChildren) => {
   const [select, setSelect] = useState<string>('')
+  const clock = new THREE.Clock()
   
   return (
     <SceneContext.Provider
       value={{
         select,
-        setSelect
+        setSelect,
+        clock,
       }}
     >
       {children}
@@ -34,3 +45,15 @@ export const useSceneSelect = () => {
   
   return context.select
 }
+
+/* eslint-disable-next-line react-refresh/only-export-components */
+export const useClock = () => {
+  const context = useContext(SceneContext)
+  
+  if (!context) {
+    throw new Error('use this hook in scene')
+  }
+
+  return context.clock
+}
+

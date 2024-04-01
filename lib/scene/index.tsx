@@ -9,7 +9,6 @@ import {
  import { Effects } from '../core'
  import { ContextProvider } from './Context'
 
-
 type TScene = {
   shadow?: boolean;
   sky?: boolean;
