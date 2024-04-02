@@ -1,11 +1,9 @@
 import { useEffect, useRef, useState } from 'react'
-import {useFrame} from '@react-three/fiber'
 import { Mesh, Vector3 } from 'three'
 import gsap from 'gsap'
 import {omit} from 'lodash'
 
 import {Dynamic} from './core'
-import { useClock } from './scene/Context'
 import { TAnimate } from './utils'
 
 type props = {
@@ -13,14 +11,12 @@ type props = {
   animations?: TAnimate[]
 }
 
-export function Box(props: props) {
+const Box = (props: props) => {
   const { animations = [] } = props
   const meshRef = useRef<Mesh>(null)
   const [hovered, setHover] = useState(false)
   const [active, setActive] = useState(false)
-
-  const tl = gsap.timeline({ repeat: 0, repeatDelay: 0, progress: 0, paused: true });
-  const clock = useClock()
+  const $tl = useRef(gsap.timeline({ repeat: -1, paused: true, immediateRender: false}));
 
   // useFrame(() => {
   //   const time = clock?.getElapsedTime() || 0
@@ -37,8 +33,26 @@ export function Box(props: props) {
   //   }
   // })
 
+  const action = {
+    "showHover": () => {
+      setHover(true)
+    },
+    "hideHover": () => {
+      setHover(false)
+    },
+    "showActive": () => {
+      setActive(true)
+    },
+    "hideActive": () => {
+      setActive(false)
+    },
+  }
+
   useEffect(() => {
     if (!meshRef.current) return
+
+    const tl = $tl.current
+    tl.clear()
 
     animations.forEach((animation) => {
 
@@ -56,21 +70,18 @@ export function Box(props: props) {
           immediateRender: false,
           onComplete: () => {
             if (animation.onComplete) {
-              const res = animation.onComplete()
-              console.log(res)
+              animation.onComplete(action)
             }
           }
         }, animation.start)
       }
-
     })
-
     tl.play()
 
     return () => {
       tl.kill()
     }
-  }, [])
+  }, [animations, $tl])
 
   return (
     <Dynamic>
@@ -92,3 +103,5 @@ export function Box(props: props) {
     </Dynamic>
   )
 }
+
+export { Box }
