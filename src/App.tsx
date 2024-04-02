@@ -1,19 +1,13 @@
-import { useState } from 'react'
 import './App.css'
 
 import { Scene, Box, Model } from '../lib/main';
+import { Vector3 } from 'three';
 
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
     <>
-      <h1>Vite + React + Three.js + Fiber</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-      </div>
+      <h1>fiber-screen-kit</h1>
       <div style={{
         width: 800,
         height: 600,
@@ -25,25 +19,36 @@ function App() {
             animations={[
               {
                 property: "position",
-                from: [1, 1, 1],
-                to: [2, 2, 2],
-                duration: 2,
-                start: 1,
+                from: new Vector3(1, 0, Math.PI),
+                to: new Vector3(2, 2, 2),
+                duration: 3,
+                start: 2,
                 delay: 0,
+                onComplete: (action) => {
+                  // hide all
+                  action.hideHover()
+                  action.hideActive()
+                }
               },
               {
                 property: "rotation",
-                from: [0, 0, 0],
-                to: [0, 0, Math.PI],
+                from: new Vector3(0, 0, 0),
+                to: new Vector3(0, 0, Math.PI),
                 duration: 1,
                 start: 0,
+                onComplete: (action) => {
+                  action.showHover()
+                }
               },
               {
                 property: "position",
-                from: [2, 2, 2],
-                to: [1, 0, Math.PI],
+                from: new Vector3(1, 1, 1),
+                to: new Vector3(1, 0, Math.PI),
                 duration: 1,
-                start: 0,
+                start: 1,
+                onComplete: (action) => {
+                  action.showActive()
+                }
               },
             ]} 
           />
@@ -52,25 +57,22 @@ function App() {
             animations={[
               {
                 property: "position",
-                from: [-1, -1, -1],
-                to: [2, 2, 2],
+                from: new Vector3(-1, -1, -1),
+                to: new Vector3(2, 2, 2),
                 duration: 2,
                 start: 1,
                 delay: 0,
-                onComplete: () => {
-                  return 'postion to -1-1-1'
-                }
               },
               {
                 property: "position",
-                from: [2, 2, 2],
-                to: [-1, -1, -1],
+                from: new Vector3(2, 2, 2),
+                to: new Vector3(-1, -1, -1),
                 duration: 1,
               }
             ]} 
           />
           
-          {/* <Model scale={[0.01, 0.01, 0.01]} url="/LittlestTokyo-transformed.glb"/> */}
+          <Model scale={[0.01, 0.01, 0.01]} url="/LittlestTokyo-transformed.glb"/>
         </Scene>
       </div>
     </>
