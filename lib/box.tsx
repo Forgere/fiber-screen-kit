@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react'
+import { useEffect, useMemo, useRef, useState } from 'react'
 import { Mesh, Vector3 } from 'three'
 import gsap from 'gsap'
 import {omit} from 'lodash'
@@ -33,7 +33,7 @@ const Box = (props: props) => {
   //   }
   // })
 
-  const action = {
+  const action = useMemo(() => ({
     "showHover": () => {
       setHover(true)
     },
@@ -46,7 +46,7 @@ const Box = (props: props) => {
     "hideActive": () => {
       setActive(false)
     },
-  }
+  }), [])
 
   useEffect(() => {
     if (!meshRef.current) return
@@ -81,7 +81,7 @@ const Box = (props: props) => {
     return () => {
       tl.kill()
     }
-  }, [animations, $tl])
+  }, [animations, $tl, action])
 
   return (
     <Dynamic>

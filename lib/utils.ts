@@ -1,4 +1,5 @@
 import React from 'react';
+//@ts-expect-error - gsap is not typed
 import gsap from 'gsap';
 import { Vector3 } from 'three';
 
