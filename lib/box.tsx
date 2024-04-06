@@ -32,9 +32,7 @@ const Box = (props: props) => {
     },
   }), [])
   
-  console.log(meshRef.current)
-  useAnimationAction(meshRef.current, animations, action)
-
+  useAnimationAction(meshRef, animations, action)
   
   return (
     <Dynamic>

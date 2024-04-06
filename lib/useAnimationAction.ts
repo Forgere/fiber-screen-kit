@@ -1,15 +1,19 @@
 import {useEffect, useRef} from 'react'
-import {Vector3} from 'three'
+import {Mesh, Vector3} from 'three'
 import {gsap} from 'gsap'
+import { TAnimate, TAction } from './utils'
 
-const useAnimationAction = (ins, animations, action) => {
-    
-    console.log(ins, action)
-    
-    const $tl = useRef(gsap.timeline({ repeat: -1, paused: true, immediateRender: false}));
+type TRef = {
+    current: Mesh
+}
+
+const useAnimationAction = (insRef: TRef, animations: TAnimate[], action: TAction) => {
+    const $tl = useRef(gsap.timeline({ repeat: -1, paused: true, immediateRender: false}))
     
     useEffect(() => {
-        if (!ins) return
+        if (!insRef) return
+        const ins = insRef.current
+        const tl = $tl.current
 
         tl.clear()
 
@@ -21,7 +25,7 @@ const useAnimationAction = (ins, animations, action) => {
             const ease = animation.ease || 'power1.inOut'
 
             if (ins && ins[animation.property]) {
-                tl.fromTo(meshRef.current[animation.property], originVector, {
+                tl.fromTo(ins[animation.property], originVector, {
                     ...toVector,
                     duration: duration,
                     ease: ease,
@@ -41,13 +45,12 @@ const useAnimationAction = (ins, animations, action) => {
             }
         })
         
-        console.log(1)
         tl.play()
 
         return () => {
-          tl.kill()
+            tl.kill()
         }
-    }, [ins])
+    }, [])
  }
 
 export default useAnimationAction

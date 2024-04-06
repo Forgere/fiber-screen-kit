@@ -17,6 +17,7 @@ export type TAnimate = {
   duration?: number,
   ease?: gsap.EaseFunction,
   delay?: number,
+  onStart?: (action: TAction) => void,
   onComplete?: (action: TAction) => void,
   onReverseComplete?: () => void,
 }
