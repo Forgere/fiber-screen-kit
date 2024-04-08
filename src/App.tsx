@@ -2,18 +2,51 @@ import './App.css'
 
 import { Scene, Box, Model } from '../lib/main';
 import { Vector3 } from 'three';
+import { useState } from 'react';
 
 function App() {
+  const [preset, setPreset] = useState('')
 
   return (
     <>
       <h1>fiber-screen-kit</h1>
+      <button onClick={() => setPreset('camera1')}>preset1</button>
       <div style={{
         width: 800,
         height: 600,
         border: '1px solid #ccc'
       }}>
-        <Scene shadow={false}>
+        <Scene shadow={false} cameraOptions={{
+          currentPreset: preset,
+          onCompleted: () => {
+            console.log('completed')
+            setPreset('')
+          },
+          presets: {
+            'camera1': [
+              {
+                property: 'position',
+                target: new Vector3(0, 1, 1),
+                to: new Vector3(0, 0, 10),
+                duration: 2,
+                start: 0
+              },
+              {
+                property: 'position',
+                target: new Vector3(0, 1, 0),
+                to: new Vector3(0, 1, 10),
+                duration: 2,
+                start: 2,
+              },
+              // {
+              //   property: 'target',
+              //   to: new Vector3(1, 0, 1),
+              //   duration: 2,
+              //   start: 2,
+              // }
+            ]
+          }
+        }}>
           <Box 
             position={[1, 1, 1]} 
             animations={[
