@@ -34,6 +34,8 @@ export function Model(props) {
         >
           <group position={[-97.409, -7.128, -96.27]}>
             <mesh
+              castShadow
+              receiveShadow
               name='Object078_Plastic_Soft_0'
               geometry={nodes.Object078_Plastic_Soft_0.geometry}
               material={materials.Plastic_Soft}
@@ -48,6 +50,8 @@ export function Model(props) {
           <group name='leaf' position={[-0.015, 1.307, 8.04]}>
             <group position={[0.015, -1.561, -6.223]}>
               <mesh
+                castShadow
+                receiveShadow
                 name='leaf_normal_0'
                 geometry={nodes.leaf_normal_0.geometry}
                 material={materials.normal}
@@ -61,6 +65,8 @@ export function Model(props) {
           >
             <group position={[-2.127, 0.48, -3.246]}>
               <mesh
+                castShadow
+                receiveShadow
                 name='hand2_normal_0'
                 geometry={nodes.hand2_normal_0.geometry}
                 material={materials.normal}
@@ -74,6 +80,8 @@ export function Model(props) {
           >
             <group position={[2.169, 0.48, -3.267]}>
               <mesh
+                castShadow
+                receiveShadow
                 name='hand1_normal_0'
                 geometry={nodes.hand1_normal_0.geometry}
                 material={materials.normal}
@@ -83,6 +91,8 @@ export function Model(props) {
           <group name='foot2' position={[2.428, -0.923, 2.02]}>
             <group position={[-2.428, 0.669, -0.203]}>
               <mesh
+                castShadow
+                receiveShadow
                 name='foot2_normal_0'
                 geometry={nodes.foot2_normal_0.geometry}
                 material={materials.normal}
@@ -92,6 +102,8 @@ export function Model(props) {
           <group name='foot1' position={[-2.491, -0.923, 1.978]}>
             <group position={[2.491, 0.669, -0.161]}>
               <mesh
+                castShadow
+                receiveShadow
                 name='foot1_normal_0'
                 geometry={nodes.foot1_normal_0.geometry}
                 material={materials.normal}
@@ -100,6 +112,8 @@ export function Model(props) {
           </group>
           <group position={[0, -0.254, 1.817]}>
             <mesh
+              castShadow
+              receiveShadow
               name='body_normal_0'
               geometry={nodes.body_normal_0.geometry}
               material={materials.normal}
@@ -114,11 +128,15 @@ export function Model(props) {
         >
           <group position={[-55.32, -73.646, -80.314]}>
             <mesh
+              castShadow
+              receiveShadow
               name='Object608_metalmat_0'
               geometry={nodes.Object608_metalmat_0.geometry}
               material={materials.metalmat}
             />
             <mesh
+              castShadow
+              receiveShadow
               name='Object608_paintmat_0'
               geometry={nodes.Object608_paintmat_0.geometry}
               material={materials.paintmat}
@@ -133,6 +151,8 @@ export function Model(props) {
         >
           <group position={[-138.488, 205.266, 96.473]}>
             <mesh
+              castShadow
+              receiveShadow
               name='wire7_normal_0'
               geometry={nodes.wire7_normal_0.geometry}
               material={materials.normal}
@@ -147,6 +167,8 @@ export function Model(props) {
           <group name='Object680' position={[-12.887, 0, 8.351]}>
             <group position={[12.887, 0, 68.079]}>
               <mesh
+                castShadow
+                receiveShadow
                 name='Object680_metalmat_0'
                 geometry={nodes.Object680_metalmat_0.geometry}
                 material={materials.metalmat}
@@ -156,6 +178,8 @@ export function Model(props) {
           <group name='Object681' position={[14.29, 0, 8.351]}>
             <group position={[12.887, 0, 68.079]}>
               <mesh
+                castShadow
+                receiveShadow
                 name='Object681_metalmat_0'
                 geometry={nodes.Object681_metalmat_0.geometry}
                 material={materials.metalmat}
@@ -164,21 +188,29 @@ export function Model(props) {
           </group>
           <group position={[0, 0, 76.43]}>
             <mesh
+              castShadow
+              receiveShadow
               name='Object675_metalmat_0'
               geometry={nodes.Object675_metalmat_0.geometry}
               material={materials.metalmat}
             />
             <mesh
+              castShadow
+              receiveShadow
               name='Object675_paintmat_0'
               geometry={nodes.Object675_paintmat_0.geometry}
               material={materials.paintmat}
             />
             <mesh
+              castShadow
+              receiveShadow
               name='Object675_glassmat_0'
               geometry={nodes.Object675_glassmat_0.geometry}
               material={materials.glassmat}
             />
             <mesh
+              castShadow
+              receiveShadow
               name='Object675_outline_0'
               geometry={nodes.Object675_outline_0.geometry}
               material={materials.outline}
@@ -196,6 +228,8 @@ export function Model(props) {
             rotation={[0, 0, 0.698]}
           >
             <mesh
+              castShadow
+              receiveShadow
               name='Object532_normal_0'
               geometry={nodes.Object532_normal_0.geometry}
               material={materials.normal}
@@ -209,6 +243,8 @@ export function Model(props) {
         >
           <group rotation={[0, 0, 0.698]}>
             <mesh
+              castShadow
+              receiveShadow
               name='Object689_metalmat_0'
               geometry={nodes.Object689_metalmat_0.geometry}
               material={materials.metalmat}
@@ -222,6 +258,8 @@ export function Model(props) {
         >
           <group position={[-0.965, -3.606, -2.09]}>
             <mesh
+              castShadow
+              receiveShadow
               name='Plane001_normal_0'
               geometry={nodes.Plane001_normal_0.geometry}
               material={materials.normal}
@@ -236,6 +274,8 @@ export function Model(props) {
         >
           <group position={[-0.965, -3.606, -2.09]}>
             <mesh
+              castShadow
+              receiveShadow
               name='Plane003_normal_0'
               geometry={nodes.Plane003_normal_0.geometry}
               material={materials.normal}
@@ -249,6 +289,8 @@ export function Model(props) {
         >
           <group position={[-0.965, -3.606, -2.09]}>
             <mesh
+              castShadow
+              receiveShadow
               name='Plane104_normal_0'
               geometry={nodes.Plane104_normal_0.geometry}
               material={materials.normal}
@@ -263,6 +305,8 @@ export function Model(props) {
         >
           <group position={[-0.965, -3.606, -2.09]}>
             <mesh
+              castShadow
+              receiveShadow
               name='Plane103_normal_0'
               geometry={nodes.Plane103_normal_0.geometry}
               material={materials.normal}
@@ -276,6 +320,8 @@ export function Model(props) {
         >
           <group position={[-0.965, -3.606, -2.09]}>
             <mesh
+              castShadow
+              receiveShadow
               name='Plane105_normal_0'
               geometry={nodes.Plane105_normal_0.geometry}
               material={materials.normal}
@@ -290,6 +336,8 @@ export function Model(props) {
         >
           <group position={[-0.965, -3.606, -2.09]}>
             <mesh
+              castShadow
+              receiveShadow
               name='Plane106_normal_0'
               geometry={nodes.Plane106_normal_0.geometry}
               material={materials.normal}
@@ -303,6 +351,8 @@ export function Model(props) {
         >
           <group position={[-0.965, -3.606, -2.09]}>
             <mesh
+              castShadow
+              receiveShadow
               name='Plane108_normal_0'
               geometry={nodes.Plane108_normal_0.geometry}
               material={materials.normal}
@@ -317,6 +367,8 @@ export function Model(props) {
         >
           <group position={[-0.965, -3.606, -2.09]}>
             <mesh
+              castShadow
+              receiveShadow
               name='Plane107_normal_0'
               geometry={nodes.Plane107_normal_0.geometry}
               material={materials.normal}
@@ -330,6 +382,8 @@ export function Model(props) {
         >
           <group position={[-0.965, -3.606, -2.09]}>
             <mesh
+              castShadow
+              receiveShadow
               name='Plane109_normal_0'
               geometry={nodes.Plane109_normal_0.geometry}
               material={materials.normal}
@@ -344,6 +398,8 @@ export function Model(props) {
         >
           <group position={[-0.965, -3.606, -2.09]}>
             <mesh
+              castShadow
+              receiveShadow
               name='Plane110_normal_0'
               geometry={nodes.Plane110_normal_0.geometry}
               material={materials.normal}
@@ -358,6 +414,8 @@ export function Model(props) {
         >
           <group position={[-0.965, -3.606, -2.09]}>
             <mesh
+              castShadow
+              receiveShadow
               name='Plane111_normal_0'
               geometry={nodes.Plane111_normal_0.geometry}
               material={materials.normal}
@@ -371,6 +429,8 @@ export function Model(props) {
         >
           <group position={[-0.965, -3.606, -2.09]}>
             <mesh
+              castShadow
+              receiveShadow
               name='Plane112_normal_0'
               geometry={nodes.Plane112_normal_0.geometry}
               material={materials.normal}
@@ -384,11 +444,15 @@ export function Model(props) {
         >
           <group position={[49.835, -98.15, 42.104]}>
             <mesh
+              castShadow
+              receiveShadow
               name='Object704_Plastic_Soft_0'
               geometry={nodes.Object704_Plastic_Soft_0.geometry}
               material={materials.Plastic_Soft}
             />
             <mesh
+              castShadow
+              receiveShadow
               name='Object704_metalmat_0'
               geometry={nodes.Object704_metalmat_0.geometry}
               material={materials.metalmat}
@@ -405,6 +469,8 @@ export function Model(props) {
             rotation={[0.189, 0, -0.143]}
           >
             <mesh
+              castShadow
+              receiveShadow
               name='wire1_Plastic_Soft_0'
               geometry={nodes.wire1_Plastic_Soft_0.geometry}
               material={materials.Plastic_Soft}
@@ -427,6 +493,8 @@ export function Model(props) {
               rotation={[0, 0, -0.519]}
             >
               <mesh
+                castShadow
+                receiveShadow
                 name='Object081_normal_0'
                 geometry={nodes.Object081_normal_0.geometry}
                 material={materials.normal}
@@ -441,6 +509,8 @@ export function Model(props) {
           >
             <group position={[-78.668, -54.735, -19.124]}>
               <mesh
+                castShadow
+                receiveShadow
                 name='Object332_normal_0'
                 geometry={nodes.Object332_normal_0.geometry}
                 material={materials.normal}
@@ -455,6 +525,8 @@ export function Model(props) {
           >
             <group position={[-78.668, -54.735, -19.124]}>
               <mesh
+                castShadow
+                receiveShadow
                 name='Object682_normal_0'
                 geometry={nodes.Object682_normal_0.geometry}
                 material={materials.normal}
@@ -463,6 +535,8 @@ export function Model(props) {
           </group>
           <group position={[-80.707, -112.36, 49.377]} rotation={[0, 0, 0.802]}>
             <mesh
+              castShadow
+              receiveShadow
               name='wire2_Plastic_Soft_0'
               geometry={nodes.wire2_Plastic_Soft_0.geometry}
               material={materials.Plastic_Soft}
@@ -479,6 +553,8 @@ export function Model(props) {
             rotation={[0, 0, -0.069]}
           >
             <mesh
+              castShadow
+              receiveShadow
               name='wire3_normal_0'
               geometry={nodes.wire3_normal_0.geometry}
               material={materials.normal}
@@ -495,6 +571,8 @@ export function Model(props) {
             rotation={[0, 0, 0.165]}
           >
             <mesh
+              castShadow
+              receiveShadow
               name='wire4_normal_0'
               geometry={nodes.wire4_normal_0.geometry}
               material={materials.normal}
@@ -511,6 +589,8 @@ export function Model(props) {
             rotation={[0, 0, -0.284]}
           >
             <mesh
+              castShadow
+              receiveShadow
               name='wire5_normal_0'
               geometry={nodes.wire5_normal_0.geometry}
               material={materials.normal}
@@ -524,6 +604,8 @@ export function Model(props) {
         >
           <group position={[-111.42, 210.54, 169.876]}>
             <mesh
+              castShadow
+              receiveShadow
               name='Object706_Material_#5518_0'
               geometry={nodes["Object706_Material_#5518_0"].geometry}
               material={materials.Material_5518}
@@ -537,6 +619,8 @@ export function Model(props) {
         >
           <group position={[-111.42, 210.54, 168.544]}>
             <mesh
+              castShadow
+              receiveShadow
               name='Object707_Material_#5518_0'
               geometry={nodes["Object707_Material_#5518_0"].geometry}
               material={materials.Material_5518}
@@ -550,6 +634,8 @@ export function Model(props) {
         >
           <group position={[-111.42, 210.54, 169.876]}>
             <mesh
+              castShadow
+              receiveShadow
               name='Object708_Material_#5518_0'
               geometry={nodes["Object708_Material_#5518_0"].geometry}
               material={materials.Material_5518}
@@ -563,6 +649,8 @@ export function Model(props) {
         >
           <group position={[-111.42, 210.54, 168.544]}>
             <mesh
+              castShadow
+              receiveShadow
               name='Object709_Material_#5518_0'
               geometry={nodes["Object709_Material_#5518_0"].geometry}
               material={materials.Material_5518}
@@ -571,6 +659,8 @@ export function Model(props) {
         </group>
         <primitive object={nodes._rootJoint} />
         <mesh
+          castShadow
+          receiveShadow
           name='Object649_normal_0'
           geometry={nodes.Object649_normal_0.geometry}
           material={materials.normal}
@@ -578,6 +668,8 @@ export function Model(props) {
           rotation={[-Math.PI / 2, 0, 0]}
         />
         <mesh
+          castShadow
+          receiveShadow
           name='Object649_paintmat_0'
           geometry={nodes.Object649_paintmat_0.geometry}
           material={materials.paintmat}
@@ -585,6 +677,8 @@ export function Model(props) {
           rotation={[-Math.PI / 2, 0, 0]}
         />
         <mesh
+          castShadow
+          receiveShadow
           name='Object649_metalmat_0'
           geometry={nodes.Object649_metalmat_0.geometry}
           material={materials.metalmat}
@@ -592,6 +686,8 @@ export function Model(props) {
           rotation={[-Math.PI / 2, 0, 0]}
         />
         <mesh
+          castShadow
+          receiveShadow
           name='Object649_Plastic_Soft_0'
           geometry={nodes.Object649_Plastic_Soft_0.geometry}
           material={materials.Plastic_Soft}
@@ -599,6 +695,8 @@ export function Model(props) {
           rotation={[-Math.PI / 2, 0, 0]}
         />
         <mesh
+          castShadow
+          receiveShadow
           name='Object649_alpha_glass_0'
           geometry={nodes.Object649_alpha_glass_0.geometry}
           material={materials.alpha_glass}
@@ -606,6 +704,8 @@ export function Model(props) {
           rotation={[-Math.PI / 2, 0, 0]}
         />
         <mesh
+          castShadow
+          receiveShadow
           name='Object649_glassmat_0'
           geometry={nodes.Object649_glassmat_0.geometry}
           material={materials.glassmat}
@@ -613,6 +713,8 @@ export function Model(props) {
           rotation={[-Math.PI / 2, 0, 0]}
         />
         <mesh
+          castShadow
+          receiveShadow
           name='Object649_Material_#5511_0'
           geometry={nodes["Object649_Material_#5511_0"].geometry}
           material={materials.Material_5511}
@@ -620,6 +722,8 @@ export function Model(props) {
           rotation={[-Math.PI / 2, 0, 0]}
         />
         <mesh
+          castShadow
+          receiveShadow
           name='Object649_Material_#5512_0'
           geometry={nodes["Object649_Material_#5512_0"].geometry}
           material={materials.Material_5512}
@@ -627,6 +731,8 @@ export function Model(props) {
           rotation={[-Math.PI / 2, 0, 0]}
         />
         <mesh
+          castShadow
+          receiveShadow
           name='Object649_glass_transp_0'
           geometry={nodes.Object649_glass_transp_0.geometry}
           material={materials.glass_transp}
@@ -634,6 +740,8 @@ export function Model(props) {
           rotation={[-Math.PI / 2, 0, 0]}
         />
         <mesh
+          castShadow
+          receiveShadow
           name='Object649_interiors_0'
           geometry={nodes.Object649_interiors_0.geometry}
           material={materials.interiors}
@@ -641,6 +749,8 @@ export function Model(props) {
           rotation={[-Math.PI / 2, 0, 0]}
         />
         <mesh
+          castShadow
+          receiveShadow
           name='Object649_alpha_0'
           geometry={nodes.Object649_alpha_0.geometry}
           material={materials.alpha}
@@ -648,6 +758,8 @@ export function Model(props) {
           rotation={[-Math.PI / 2, 0, 0]}
         />
         <mesh
+          castShadow
+          receiveShadow
           name='Object674_outline_0'
           geometry={nodes.Object674_outline_0.geometry}
           material={materials.outline}
@@ -655,6 +767,8 @@ export function Model(props) {
           rotation={[-Math.PI / 2, 0, 0]}
         />
         <mesh
+          castShadow
+          receiveShadow
           name='Object705_Material_#5516_0'
           geometry={nodes["Object705_Material_#5516_0"].geometry}
           material={materials.Material_5516}
@@ -662,6 +776,8 @@ export function Model(props) {
           rotation={[-Math.PI / 2, 0, 0]}
         />
         <mesh
+          castShadow
+          receiveShadow
           name='Object619_alpha_0'
           geometry={nodes.Object619_alpha_0.geometry}
           material={materials.alpha_0}
@@ -670,48 +786,64 @@ export function Model(props) {
           scale={0.792}
         />
         <skinnedMesh
+          castShadow
+          receiveShadow
           name='Object224_normal_0'
           geometry={nodes.Object224_normal_0.geometry}
           material={materials.normal}
           skeleton={nodes.Object224_normal_0.skeleton}
         />
         <skinnedMesh
+          castShadow
+          receiveShadow
           name='Object224_metalmat_0'
           geometry={nodes.Object224_metalmat_0.geometry}
           material={materials.metalmat}
           skeleton={nodes.Object224_metalmat_0.skeleton}
         />
         <skinnedMesh
+          castShadow
+          receiveShadow
           name='Object688_normal_0'
           geometry={nodes.Object688_normal_0.geometry}
           material={materials.normal}
           skeleton={nodes.Object688_normal_0.skeleton}
         />
         <skinnedMesh
+          castShadow
+          receiveShadow
           name='Object687_normal_0'
           geometry={nodes.Object687_normal_0.geometry}
           material={materials.normal}
           skeleton={nodes.Object687_normal_0.skeleton}
         />
         <skinnedMesh
+          castShadow
+          receiveShadow
           name='Object697_normal_0'
           geometry={nodes.Object697_normal_0.geometry}
           material={materials.normal}
           skeleton={nodes.Object697_normal_0.skeleton}
         />
         <skinnedMesh
+          castShadow
+          receiveShadow
           name='Object698_normal_0'
           geometry={nodes.Object698_normal_0.geometry}
           material={materials.normal}
           skeleton={nodes.Object698_normal_0.skeleton}
         />
         <skinnedMesh
+          castShadow
+          receiveShadow
           name='Object699_normal_0'
           geometry={nodes.Object699_normal_0.geometry}
           material={materials.normal}
           skeleton={nodes.Object699_normal_0.skeleton}
         />
         <skinnedMesh
+          castShadow
+          receiveShadow
           name='Object700_normal_0'
           geometry={nodes.Object700_normal_0.geometry}
           material={materials.normal}

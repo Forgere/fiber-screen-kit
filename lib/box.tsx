@@ -38,6 +38,8 @@ const Box = (props: props) => {
     <Dynamic>
       <mesh
         {...omit(props, 'animations')}
+        castShadow
+        receiveShadow
         ref={meshRef}
         scale={active ? 1.5 : 1}
         onClick={() => {

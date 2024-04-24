@@ -16,7 +16,7 @@ function App() {
         height: 600,
         border: '1px solid #ccc'
       }}>
-        <Scene shadow={false} cameraOptions={{
+        <Scene shadow={true} cameraOptions={{
           currentPreset: preset,
           onCompleted: () => {
             console.log('completed')
@@ -48,7 +48,7 @@ function App() {
           }
         }}>
           <Box 
-            position={[1, 1, 1]} 
+            position={[1, 0, Math.PI]} 
             animations={[
               {
                 property: "position",

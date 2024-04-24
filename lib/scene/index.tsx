@@ -1,7 +1,7 @@
 import { Canvas } from '@react-three/fiber'
 import { useState, Suspense } from 'react'
 import { 
-  PerformanceMonitor, Environment, Bvh, BakeShadows, Sky,
+  PerformanceMonitor, Environment, Bvh, Sky,
   type EnvironmentProps
  } from '@react-three/drei'
  import { Selection } from "@react-three/postprocessing"
@@ -35,12 +35,11 @@ export const Scene = (props: TScene = {}) => {
       <ContextProvider>
         <Canvas shadows={shadow} dpr={dpr}>
           <Camera {...cameraOptions}/>
-          { shadow && <BakeShadows />}
           { sky && <Sky />}
           <PerformanceMonitor factor={3} onChange={({ factor }) => setDpr(Math.floor(0.5 + 0.5 * factor))} />
           <Environment {...envOptions} />
           <ambientLight intensity={1} />
-          <spotLight position={[10, 10, 10]} angle={0.15} penumbra={1} decay={0} intensity={Math.PI} />
+          <directionalLight castShadow position={[10, 10, 10]} intensity={Math.PI * 2} />
           <pointLight position={[-10, -10, -10]} decay={0} intensity={Math.PI} />
           <Bvh firstHitOnly>
             <Selection>
